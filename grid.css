@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-color: #85aedd;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color: #f5cb42;
+}
+
+nav a {
+text-decoration: none;
+}
+
+#menu {
+	height: 50px;
+	margin: auto;
+	width: 1000px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #d3ffb8;
+}
+
+.main {
+  grid-area: main;
+  background-color: #c9dbff;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #ffd1ab;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  100px
+    "navbar"  100px
+    "main"    100px
+    "sidebar" 100px
+    "footer"  100px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+    "header  header"
+    "navbar  navbar"
+    "sidebar main"
+    "footer  footer"; */
+
+    grid-template:
+      "header  header" 100px
+      "navbar  navbar" 50px
+      "sidebar main"   auto
+      "footer  footer" 100px /
+      auto    auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header  header header"  100px
+      "navbar  navbar navbar"  100px
+      "sidebar  main" auto
+      "footer  footer footer"  100px /
+      auto    auto;
+  }
+}
